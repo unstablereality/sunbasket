@@ -40,11 +40,12 @@ def get_meal_names(date, meal_type):
     for item in cursor:
         payload.append(item[0])
 
+    # Clean up the database connection
+    cursor.close()
+    db_conn.close()
+
     # Validate the payload
     validate_payload(payload)
-
-    # Clean up the database connection
-    db_conn.close()
 
     # Escort the payload
     return payload
