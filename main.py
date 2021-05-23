@@ -12,11 +12,13 @@ async def get_meal_names(date, meal_type):
     payload = []
 
     # Set up the query using the path parameters
-    query = (f"SELECT meal.name FROM meal "
-             f"JOIN meal_week mw ON meal.id = mw.meal_id "
-             f"JOIN week w on mw.week_id = w.id "
-             f"WHERE type = '{meal_type}' "
-             f"AND '{date}' BETWEEN w.start_date AND w.end_date")
+    query = (
+        f"SELECT meal.name FROM meal "
+        f"JOIN meal_week mw ON meal.id = mw.meal_id "
+        f"JOIN week w on mw.week_id = w.id "
+        f"WHERE type = '{meal_type}' "
+        f"AND '{date}' BETWEEN w.start_date AND w.end_date"
+    )
 
     # Connect to the DB
     db_conn = db_connect()

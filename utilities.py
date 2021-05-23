@@ -7,16 +7,20 @@ import settings
 # Initiate the database connection and return the db_conn object
 def db_connect():
     # Import the database connection info from settings
-    dbinfo = {'db_host': settings.DBHOST,
-              'db_user': settings.DBUSER,
-              'db_pass': settings.DBPASS,
-              'db_name': settings.DBNAME}
+    dbinfo = {
+        "db_host": settings.DBHOST,
+        "db_user": settings.DBUSER,
+        "db_pass": settings.DBPASS,
+        "db_name": settings.DBNAME,
+    }
 
     # Create the database connection
-    db_conn = mysql.connector.connect(host=dbinfo['db_host'],
-                                      user=dbinfo['db_user'],
-                                      password=dbinfo['db_pass'],
-                                      database=dbinfo['db_name'])
+    db_conn = mysql.connector.connect(
+        host=dbinfo["db_host"],
+        user=dbinfo["db_user"],
+        password=dbinfo["db_pass"],
+        database=dbinfo["db_name"],
+    )
     return db_conn
 
 
