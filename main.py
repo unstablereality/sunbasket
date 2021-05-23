@@ -1,5 +1,10 @@
-from utilities import db_connect, validate_date, validate_payload, validate_meal_type
 from fastapi import FastAPI
+from utilities import (
+    db_connect,
+    validate_date,
+    validate_payload,
+    validate_meal_type
+)
 
 
 # Fire up a new API
@@ -8,7 +13,7 @@ app = FastAPI()
 
 # Get the list of meal names for a given date and type
 @app.get("/menu/{date}/{meal_type}")
-async def get_meal_names(date, meal_type):
+def get_meal_names(date, meal_type):
     payload = []
 
     # Set up the query using the path parameters
