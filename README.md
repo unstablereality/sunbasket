@@ -33,6 +33,6 @@ Response
 A test suite is available and can be run with `pytest test_main.py -v`
 
 ## Thoughts
-If I were to expand this application, I would add additional endpoints to list all weeks with meals available (`/menu/`) all available meal types for a given week (`menu/{date}/meal_types`), and all available meals for a given week (`menu/{date}/meals`). This would give the user more information to provide a valid selection. 
+If I were to expand this application, I would add additional endpoints to list all weeks with meals available (`/menu`) all available meal types for a given week (`menu/{date}/meal_types`), and all available meals for a given week (`menu/{date}/meals`). This would give the user more information to provide a valid selection. 
 
 The query for the `meal_type` list could be done at the start of the application and then memoized for later use. This would prevent repeated database queries for the same information which would not change regularly. That would introduce a need to be able to trigger a reload of `meal_type` data without restarting the entire application, most likely through another endpoint.
