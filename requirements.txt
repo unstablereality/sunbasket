@@ -1,4 +1,4 @@
 fastapi==0.63.0
-mock==4.0.3
 mysql-connector-python==8.0.25
 pytest==6.2.2
+python-dotenv~=0.17.1
