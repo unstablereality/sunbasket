@@ -47,9 +47,3 @@ def validate_meal_type(meal_type, db_conn):
     # Check that meal_type_list is in meal_type_list
     if meal_type not in meal_type_list:
         raise HTTPException(status_code=400, detail="Invalid meal type")
-
-
-# Validate that we got some results, otherwise raise a 404
-def validate_payload(payload):
-    if not payload:
-        raise HTTPException(status_code=404, detail="No meals found")

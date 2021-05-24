@@ -1,8 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from utilities import (
     db_connect,
     validate_date,
-    validate_payload,
     validate_meal_type
 )
 
@@ -44,8 +43,9 @@ def get_meal_names(date, meal_type):
     cursor.close()
     db_conn.close()
 
-    # Validate the payload
-    validate_payload(payload)
+    # Validate the payload has something in it
+    if not payload:
+        raise HTTPException(status_code=404, detail="No meals found")
 
     # Escort the payload
     return payload
