@@ -8,6 +8,8 @@ Note: This application was developed using Python 3.9. It is recommended to use 
 1. Make a new virtual environment `python -m venv venv`
 2. Activate the virtual environment `source venv/bin/activate`
 3. Install dependencies `pip install -r requirements.txt`
+4. In the project root run `cp .env.example .env`
+5. Edit the .env file to add the database connection information
 
 ## Startup
 Start the API server with `uvicorn main:app`. This should start a server running on `127.0.0.1:8000`.
